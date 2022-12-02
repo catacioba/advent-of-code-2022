@@ -1,4 +1,6 @@
 ### IntelliJ IDEA ###
+.idea/**
+aoc-2022.iml
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
@@ -28,5 +30,8 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-.idea/**
-aoc-2022.iml
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
