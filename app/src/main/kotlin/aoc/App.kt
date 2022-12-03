@@ -2,6 +2,7 @@ package aoc
 
 import aoc.ch01.Ch01
 import aoc.ch02.Ch02
+import aoc.ch03.Ch03
 import kotlinx.cli.ArgParser
 import kotlinx.cli.ArgType
 import kotlinx.cli.default
@@ -28,6 +29,7 @@ fun getChallenge(challenge: Int): Challenge {
     return when (challenge) {
         1 -> Ch01()
         2 -> Ch02()
+        3 -> Ch03()
         else -> {
             throw java.lang.IllegalArgumentException("Missing challenge $challenge")
         }
