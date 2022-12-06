@@ -5,6 +5,7 @@ import aoc.ch02.Ch02
 import aoc.ch03.Ch03
 import aoc.ch04.Ch04
 import aoc.ch05.Ch05
+import aoc.ch06.Ch06
 import kotlinx.cli.ArgParser
 import kotlinx.cli.ArgType
 import kotlinx.cli.default
@@ -20,7 +21,7 @@ fun challengeToString(challenge: Int): String {
 
 fun readTestFiles(challenge: Int): Array<out File> {
     val dir = File("data/ch${challengeToString(challenge)}/")
-    return dir.listFiles { _, name -> name.startsWith("test") }!!
+    return (dir.listFiles { _, name -> name.startsWith("test") })?.apply { sortBy { it.absolutePath } }!!
 }
 
 fun readInputFile(challenge: Int): File {
@@ -34,6 +35,7 @@ fun getChallenge(challenge: Int): Challenge {
         3 -> Ch03()
         4 -> Ch04()
         5 -> Ch05()
+        6 -> Ch06()
         else -> {
             throw java.lang.IllegalArgumentException("Missing challenge $challenge")
         }
