@@ -1,5 +1,6 @@
 package aoc
 
+import aoc.ch08.Ch08
 import aoc.ch01.Ch01
 import aoc.ch02.Ch02
 import aoc.ch03.Ch03
@@ -38,6 +39,7 @@ fun getChallenge(challenge: Int): Challenge {
         5 -> Ch05()
         6 -> Ch06()
         7 -> Ch07()
+        8 -> Ch08()
         else -> {
             throw java.lang.IllegalArgumentException("Missing challenge $challenge")
         }
