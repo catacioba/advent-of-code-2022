@@ -46,7 +46,7 @@ class Ch10 : Challenge {
         return xByCycles
     }
 
-    override fun partOne(input: String) {
+    override fun partOne(input: String, debug: Boolean) {
         val instructions =
             input.lineSequence().map(Instruction::fromLine).toList()
 
@@ -57,7 +57,7 @@ class Ch10 : Challenge {
         })
     }
 
-    override fun partTwo(input: String) {
+    override fun partTwo(input: String, debug: Boolean) {
         val instructions =
             input.lineSequence().map(Instruction::fromLine).toList()
 

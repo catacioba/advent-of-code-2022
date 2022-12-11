@@ -15,7 +15,7 @@ class Ch04 : Challenge {
         return Interval(p[0].toInt(), p[1].toInt())
     }
 
-    override fun partOne(input: String) {
+    override fun partOne(input: String, debug: Boolean) {
         println(input.lineSequence()
             .map { it.split(',') }
             .map { Pair(it[0].toInterval(), it[1].toInterval()) }
@@ -23,7 +23,7 @@ class Ch04 : Challenge {
             .count())
     }
 
-    override fun partTwo(input: String) {
+    override fun partTwo(input: String, debug: Boolean) {
         println(input.lineSequence()
             .map { it.split(',') }
             .map { Pair(it[0].toInterval(), it[1].toInterval()) }

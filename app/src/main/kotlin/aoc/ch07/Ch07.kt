@@ -114,14 +114,14 @@ class Ch07 : Challenge {
         return root
     }
 
-    override fun partOne(input: String) {
+    override fun partOne(input: String, debug: Boolean) {
         val commands = parseInput(input)
         val root = reconstructFileTree(commands)
 
         println(root.directoriesSizeSequence().filter { it <= 100000 }.sum())
     }
 
-    override fun partTwo(input: String) {
+    override fun partTwo(input: String, debug: Boolean) {
         val commands = parseInput(input)
         val root = reconstructFileTree(commands)
 

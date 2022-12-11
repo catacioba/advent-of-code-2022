@@ -1,6 +1,5 @@
 package aoc
 
-import aoc.ch08.Ch08
 import aoc.ch01.Ch01
 import aoc.ch02.Ch02
 import aoc.ch03.Ch03
@@ -8,8 +7,10 @@ import aoc.ch04.Ch04
 import aoc.ch05.Ch05
 import aoc.ch06.Ch06
 import aoc.ch07.Ch07
+import aoc.ch08.Ch08
 import aoc.ch09.Ch09
 import aoc.ch10.Ch10
+import aoc.ch11.Ch11
 import kotlinx.cli.ArgParser
 import kotlinx.cli.ArgType
 import kotlinx.cli.default
@@ -44,6 +45,7 @@ fun getChallenge(challenge: Int): Challenge {
         8 -> Ch08()
         9 -> Ch09()
         10 -> Ch10()
+        11 -> Ch11()
         else -> {
             throw java.lang.IllegalArgumentException("Missing challenge $challenge")
         }
@@ -67,6 +69,12 @@ fun main(args: Array<String>) {
         ArgType.Boolean, shortName = "t", fullName = "test"
     ).default(false)
 
+    val debug by parser.option(
+        ArgType.Boolean,
+        shortName = "d",
+        fullName = "debug"
+    ).default(false)
+
     parser.parse(args)
 
     val files = if (isTestRun) {
@@ -84,8 +92,8 @@ fun main(args: Array<String>) {
         val text = file.readText()
 
         when (part) {
-            1 -> ch.partOne(text)
-            2 -> ch.partTwo(text)
+            1 -> ch.partOne(text, debug)
+            2 -> ch.partTwo(text, debug)
         }
 
         println()

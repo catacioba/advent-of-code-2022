@@ -32,7 +32,7 @@ class Ch05 : Challenge {
         return stacks
     }
 
-    override fun partOne(input: String) {
+    override fun partOne(input: String, debug: Boolean) {
         val lines = input.lines()
         val split = lines.indexOfFirst { it.isBlank() }
 
@@ -57,7 +57,7 @@ class Ch05 : Challenge {
         println(stacks.map { it.last() }.joinToString(separator = ""))
     }
 
-    override fun partTwo(input: String) {
+    override fun partTwo(input: String, debug: Boolean) {
         val lines = input.lines()
         val split = lines.indexOfFirst { it.isBlank() }
 

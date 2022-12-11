@@ -78,14 +78,14 @@ class Ch02 : Challenge {
             }
     }
 
-    override fun partOne(input: String) {
+    override fun partOne(input: String, debug: Boolean) {
         println(input.split("\n")
             .map { it.split(" ") }
             .map { Game(it[0].first().toHand(), it[1].first().toHand()) }
             .sumOf { it.score })
     }
 
-    override fun partTwo(input: String) {
+    override fun partTwo(input: String, debug: Boolean) {
         println(input.split("\n").map { it.split(" ") }.map {
                 Game(
                     it[0].first().toHand(),
