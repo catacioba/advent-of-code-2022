@@ -1,9 +1,26 @@
 package aoc.ch09
 
 import aoc.Challenge
-import kotlin.math.absoluteValue
+import aoc.util.Position
 import kotlin.math.sign
-import kotlin.math.sqrt
+
+fun Position.moveTowards(ot: Position): Position {
+    if (this == ot) return this
+    val d = distance(ot)
+    if (x == ot.x || y == ot.y) {
+        if (d == 1) {
+            return ot
+        }
+        return ot + (this - ot).scaled()
+    }
+    if (d == 2) {
+        return ot
+    }
+    return ot + Position(
+        sign((x - ot.x).toDouble()).toInt(),
+        sign((y - ot.y).toDouble()).toInt()
+    )
+}
 
 class Ch09 : Challenge {
 
@@ -45,43 +62,6 @@ class Ch09 : Challenge {
             get() = Position(0, -1)
     }
 
-    data class Position(val x: Int, val y: Int) {
-        constructor() : this(0, 0)
-
-        fun moveTowards(ot: Position): Position {
-            if (this == ot) return this
-            val d = distance(ot)
-            if (x == ot.x || y == ot.y) {
-                if (d == 1) {
-                    return ot
-                }
-                return ot + (this - ot).scaled()
-            }
-            if (d == 2) {
-                return ot
-            }
-            return ot + Position(
-                sign((x - ot.x).toDouble()).toInt(),
-                sign((y - ot.y).toDouble()).toInt()
-            )
-        }
-
-        operator fun plus(ot: Position): Position =
-            Position(x + ot.x, y + ot.y)
-
-        operator fun minus(ot: Position): Position =
-            Position(x - ot.x, y - ot.y)
-
-        operator fun div(ot: Double): Position =
-            Position((x / ot).toInt(), (y / ot).toInt())
-
-        private fun distance(ot: Position): Int =
-            (x - ot.x).absoluteValue + (y - ot.y).absoluteValue
-
-        private fun scaled(): Position = this / length
-
-        private val length: Double = sqrt((x * x + y * y).toDouble())
-    }
 
     data class State2(val head: Position, val tail: Position) {
         fun move(d: Direction): List<State2> {
