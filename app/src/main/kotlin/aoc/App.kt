@@ -14,6 +14,7 @@ import aoc.ch11.Ch11
 import aoc.ch12.Ch12
 import aoc.ch13.Ch13
 import aoc.ch14.Ch14
+import aoc.ch15.Ch15
 import kotlinx.cli.ArgParser
 import kotlinx.cli.ArgType
 import kotlinx.cli.default
@@ -52,6 +53,7 @@ fun getChallenge(challenge: Int): Challenge {
         12 -> Ch12()
         13 -> Ch13()
         14 -> Ch14()
+        15 -> Ch15()
         else -> {
             throw java.lang.IllegalArgumentException("Missing challenge $challenge")
         }
@@ -98,8 +100,8 @@ fun main(args: Array<String>) {
         val text = file.readText()
 
         when (part) {
-            1 -> ch.partOne(text, debug)
-            2 -> ch.partTwo(text, debug)
+            1 -> ch.partOne(text, debug, isTestRun)
+            2 -> ch.partTwo(text, debug, isTestRun)
         }
 
         println()

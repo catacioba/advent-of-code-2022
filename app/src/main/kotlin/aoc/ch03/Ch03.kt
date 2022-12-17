@@ -12,7 +12,7 @@ class Ch03 : Challenge {
         }
     }
 
-    override fun partOne(input: String, debug: Boolean) {
+    override fun partOne(input: String, debug: Boolean, isTestRun: Boolean) {
         println(input.lines().map { l ->
             val first =
                 l.slice(0 until l.length / 2).asSequence().toSet()
@@ -24,7 +24,7 @@ class Ch03 : Challenge {
         }.sumOf { getPriority(it) })
     }
 
-    override fun partTwo(input: String, debug: Boolean) {
+    override fun partTwo(input: String, debug: Boolean, isTestRun: Boolean) {
         val lines = input.lines()
         println((0 until lines.count() / 3).map { idx ->
             lines.slice(3 * idx until 3 * idx + 3)

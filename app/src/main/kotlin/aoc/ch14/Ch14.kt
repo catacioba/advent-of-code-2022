@@ -121,7 +121,7 @@ class Ch14 : Challenge {
         }
     }
 
-    override fun partOne(input: String, debug: Boolean) {
+    override fun partOne(input: String, debug: Boolean, isTestRun: Boolean) {
         val grid = Grid.fromInput(input)
 
         grid.simulate()
@@ -133,7 +133,7 @@ class Ch14 : Challenge {
         println(grid.map.values.count { it == Tile.Sand })
     }
 
-    override fun partTwo(input: String, debug: Boolean) {
+    override fun partTwo(input: String, debug: Boolean, isTestRun: Boolean) {
         val grid = Grid.fromInput(input)
 
         val y = 2 + grid.maxY()

@@ -101,7 +101,7 @@ class Ch11 : Challenge {
             .reduce { acc, i -> acc * i }
     }
 
-    override fun partOne(input: String, debug: Boolean) {
+    override fun partOne(input: String, debug: Boolean, isTestRun: Boolean) {
         val monkeys = input.split("\n\n").map(Monkey::fromBlock)
         repeat(20) {
             playRound(monkeys)
@@ -109,7 +109,7 @@ class Ch11 : Challenge {
         println(monkeys.monkeyBusiness())
     }
 
-    override fun partTwo(input: String, debug: Boolean) {
+    override fun partTwo(input: String, debug: Boolean, isTestRun: Boolean) {
         val monkeys = input.split("\n\n").map(Monkey::fromBlock)
         val modulo =
             monkeys.asSequence().map { it.testValue }.reduce { a, i -> a * i }

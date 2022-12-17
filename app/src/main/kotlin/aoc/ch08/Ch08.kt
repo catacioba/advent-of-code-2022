@@ -67,13 +67,13 @@ class Ch08 : Challenge {
             x in 0 until height && y in 0 until width
     }
 
-    override fun partOne(input: String, debug: Boolean) {
+    override fun partOne(input: String, debug: Boolean, isTestRun: Boolean) {
         val grid = Grid.fromInput(input)
 
         println(grid.countVisible())
     }
 
-    override fun partTwo(input: String, debug: Boolean) {
+    override fun partTwo(input: String, debug: Boolean, isTestRun: Boolean) {
         val grid = Grid.fromInput(input)
 
         println(grid.maxScenicScore())

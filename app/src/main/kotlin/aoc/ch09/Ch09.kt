@@ -93,7 +93,7 @@ class Ch09 : Challenge {
         val tail: Position = positions.last()
     }
 
-    override fun partOne(input: String, debug: Boolean) {
+    override fun partOne(input: String, debug: Boolean, isTestRun: Boolean) {
         val directions = input.lineSequence().map(Direction::fromLine).toList()
         val state = State2(Position(), Position())
         val states = directions.fold(mutableListOf(state)) { states, d ->
@@ -103,7 +103,7 @@ class Ch09 : Challenge {
         println(states.map { it.tail }.toSet().size)
     }
 
-    override fun partTwo(input: String, debug: Boolean) {
+    override fun partTwo(input: String, debug: Boolean, isTestRun: Boolean) {
         val directions = input.lineSequence().map(Direction::fromLine).toList()
         val state = State(10)
         val states = directions.fold(mutableListOf(state)) { states, d ->

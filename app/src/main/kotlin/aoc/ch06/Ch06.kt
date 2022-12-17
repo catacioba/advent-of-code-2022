@@ -16,11 +16,11 @@ class Ch06 : Challenge {
         return null
     }
 
-    override fun partOne(input: String, debug: Boolean) {
+    override fun partOne(input: String, debug: Boolean, isTestRun: Boolean) {
         println(findMarker(input, 4))
     }
 
-    override fun partTwo(input: String, debug: Boolean) {
+    override fun partTwo(input: String, debug: Boolean, isTestRun: Boolean) {
         println(findMarker(input, 14))
     }
 }

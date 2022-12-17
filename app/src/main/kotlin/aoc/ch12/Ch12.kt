@@ -53,7 +53,7 @@ class Ch12 : Challenge {
         return dist[end]
     }
 
-    override fun partOne(input: String, debug: Boolean) {
+    override fun partOne(input: String, debug: Boolean, isTestRun: Boolean) {
         val map = input.lines()
         val start = map.find('S')
         val end = map.find('E')
@@ -66,7 +66,7 @@ class Ch12 : Challenge {
         println(map.bfs(start, end))
     }
 
-    override fun partTwo(input: String, debug: Boolean) {
+    override fun partTwo(input: String, debug: Boolean, isTestRun: Boolean) {
         val map = input.lines()
         val start = map.find('S')
         val end = map.find('E')

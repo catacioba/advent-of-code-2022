@@ -115,7 +115,7 @@ class Ch13 : Challenge {
             values.joinToString(separator = ",", postfix = "]", prefix = "[")
     }
 
-    override fun partOne(input: String, debug: Boolean) {
+    override fun partOne(input: String, debug: Boolean, isTestRun: Boolean) {
         val pairs = Packet.fromBlocks(input)
 
         println(pairs.mapIndexed { idx, p ->
@@ -123,7 +123,7 @@ class Ch13 : Challenge {
         }.sum())
     }
 
-    override fun partTwo(input: String, debug: Boolean) {
+    override fun partTwo(input: String, debug: Boolean, isTestRun: Boolean) {
         val pairs =
             input.lineSequence()
                 .filterNot { it.isBlank() }
