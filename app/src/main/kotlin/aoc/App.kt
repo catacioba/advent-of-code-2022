@@ -18,6 +18,8 @@ import aoc.ch15.Ch15
 import aoc.ch16.Ch16
 import aoc.ch17.Ch17
 import aoc.ch18.Ch18
+import aoc.ch20.Ch20
+import aoc.ch21.Ch21
 import kotlinx.cli.ArgParser
 import kotlinx.cli.ArgType
 import kotlinx.cli.default
@@ -60,6 +62,8 @@ fun getChallenge(challenge: Int): Challenge {
         16 -> Ch16()
         17 -> Ch17()
         18 -> Ch18()
+        20 -> Ch20()
+        21 -> Ch21()
         else -> {
             throw java.lang.IllegalArgumentException("Missing challenge $challenge")
         }
