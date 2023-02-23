@@ -1,0 +1,1 @@
+This repository contains my [2022 Advent of Code](https://adventofcode.com/2022) solutions. This was my first time playing with Kotlin.
